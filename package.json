@@ -1,0 +1,147 @@
+{
+  "name": "angular-formly-templates-veleta",
+  "version": "0.0.34",
+  "author": "Gabriel S. Rodrigues <gabrielsr@gmail.com>",
+  "contributors": [
+    "Gabriel S. Rodrigues <gabrielsr@gmail.com>",
+    "Tales Porto <talesap@gmail.com>",
+    "Marcos Godinho <mvsgodinho@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "http://veleta.github.io/angular-formly-templates-veleta/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/veleta/angular-formly-templates-veleta.git"
+  },
+  "keywords": [
+    "angular",
+    "forms",
+    "angularjs",
+    "angular forms",
+    "json forms",
+    "form library",
+    "formly"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "release": "standard-version",
+    "contrib:add": "all-contributors add",
+    "contrib:generate": "all-contributors generate",
+    "ngc": "./node_modules/.bin/ngc",
+    "lint": "./node_modules/.bin/tslint 'src/**/*.ts' 'demo/**/*.ts'",
+    "commit": "npm run build && git-cz",
+    "prepublish": "npm run build",
+    "build": "npm run build:lib && npm run build:bundles:compile && npm run copy:sass",
+    "prebuild:lib": "shx rm -rf ./lib",
+    "copy:sass": "shx cp ./src/index.scss ./dist/style.scss",
+    "build:lib": "npm run ngc -- --project tsconfig.build.json",
+    "prebuild:bundles": "shx rm -rf ./dist",
+    "build:bundles:compile": "./node_modules/.bin/webpack --config .config/webpack.build.js",
+    "minify": "npm run build && uglifyjs dist/index.js --output dist/index.min.js --in-source-map dist/index.js.map --source-map dist/index.min.js.map",
+    "demo": "node_modules/.bin/webpack-dashboard --title angular-otpp-demo -- node_modules/.bin/webpack-dev-server --quiet --port 9000 --content-base demo --config .config/webpack.demo.js --open",
+    "test": "./node_modules/.bin/karma start",
+    "test-watch": "./node_modules/.bin/karma start --no-single-run --auto-watch"
+  },
+  "config": {
+    "ghooks": {
+      "commit-msg": "validate-commit-msg && npm run eslint && npm t && npm run check-coverage"
+    },
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "description": "AngularJS directive which takes JSON representing a form and renders to HTML",
+  "peerDependencies": {
+    "angular": "^1.2.x || >= 1.4.0-beta.0 || >= 1.5.0-beta.0",
+    "angular-formly": "^8.4.1",
+    "api-check": "^7.0.0",
+    "brazilian-cities": "^2.0.5",
+    "lodash": "^4.17.4",
+    "ng-currency": "^1.2.3",
+    "ng-money-mask": "^2.0.1"
+  },
+  "devDependencies": {
+    "@angular/common": "^2.4.10",
+    "@angular/compiler": "^2.4.10",
+    "@angular/compiler-cli": "^2.4.10",
+    "@angular/core": "^2.4.10",
+    "@angular/forms": "^2.4.10",
+    "@angular/platform-browser": "^2.4.10",
+    "@angular/platform-browser-dynamic": "^2.4.10",
+    "@types/angular": "^1.6.28",
+    "@types/jasmine": "2.5.40",
+    "@types/node": "^7.0.22",
+    "angular": "^1.6.0",
+    "angular-formly": "^8.4.1",
+    "angular-formly-templates-bootstrap": "^6.5.1",
+    "angular-mocks": "^1.6.0",
+    "angular-ui-bootstrap": "^2.0.1",
+    "angular-ui-router": "~0.3.1",
+    "api-check": "^7.0.0",
+    "awesome-typescript-loader": "^3.1.3",
+    "brazilian-cities": "^2.0.5",
+    "codecov": "^2.2.0",
+    "codelyzer": "^3.1.1",
+    "commitizen": "^2.9.6",
+    "core-js": "^2.4.1",
+    "css-loader": "^0.28.4",
+    "cz-conventional-changelog": "^2.0.0",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "istanbul-instrumenter-loader": "^2.0.0",
+    "jasmine": "^2.6.0",
+    "karma": "^1.7.0",
+    "karma-chrome-launcher": "^2.1.1",
+    "karma-coverage": "^1.1.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-mocha-reporter": "^2.2.3",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-remap-coverage": "^0.1.4",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^2.0.3",
+    "lodash.clonedeep": "^4.5.0",
+    "ng-annotate-loader": "~0.6.0",
+    "ng-currency": "^1.2.3",
+    "ng-money-mask": "^2.0.1",
+    "node-sass": "^4.5.3",
+    "phantomjs-prebuilt": "^2.1.14",
+    "pug-html-loader": "^1.1.5",
+    "raw-loader": "^0.5.1",
+    "reflect-metadata": "^0.1.2",
+    "remap-istanbul": "^0.9.5",
+    "rxjs": "^5.4.1",
+    "sass-loader": "^6.0.6",
+    "shx": "^0.2.2",
+    "standard-version": "^3.0.0",
+    "style-loader": "^0.18.2",
+    "tslint": "^5.4.3",
+    "typescript": "^2.3.3",
+    "uglify-js": "^2.8.22",
+    "webpack": "^3.0.0",
+    "webpack-dashboard": "^0.4.0",
+    "webpack-dev-server": "^2.5.0",
+    "zone.js": "^0.8.12"
+  },
+  "jspm": {
+    "peerDependencies": {
+      "angular": "*",
+      "angular-formly": "*",
+      "api-check": "*",
+      "lodash": "*"
+    }
+  },
+  "release": {
+    "verfiyRelease": {
+      "path": "cracks",
+      "paths": [
+        "src",
+        "package.json"
+      ],
+      "silent": false
+    }
+  },
+  "dependencies": {
+    "angularjs-color-picker": "^3.4.5"
+  }
+}
