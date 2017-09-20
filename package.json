@@ -1,11 +1,9 @@
 {
   "name": "angular-formly-templates-veleta",
-  "version": "0.0.35",
+  "version": "0.0.2",
   "author": "Gabriel S. Rodrigues <gabrielsr@gmail.com>",
   "contributors": [
-    "Gabriel S. Rodrigues <gabrielsr@gmail.com>",
-    "Tales Porto <talesap@gmail.com>",
-    "Marcos Godinho <mvsgodinho@gmail.com>"
+    "Gabriel S. Rodrigues <gabrielsr@gmail.com>"
   ],
   "license": "MIT",
   "homepage": "http://veleta.github.io/angular-formly-templates-veleta/",
@@ -57,10 +55,7 @@
     "angular": "^1.2.x || >= 1.4.0-beta.0 || >= 1.5.0-beta.0",
     "angular-formly": "^8.4.1",
     "api-check": "^7.0.0",
-    "brazilian-cities": "^2.0.5",
-    "lodash": "^4.17.4",
-    "ng-currency": "^1.2.3",
-    "ng-money-mask": "^2.0.1"
+    "lodash": "^4.17.4"
   },
   "devDependencies": {
     "@angular/common": "^2.4.10",
@@ -102,8 +97,6 @@
     "karma-webpack": "^2.0.3",
     "lodash.clonedeep": "^4.5.0",
     "ng-annotate-loader": "~0.6.0",
-    "ng-currency": "^1.2.3",
-    "ng-money-mask": "^2.0.1",
     "node-sass": "^4.5.3",
     "phantomjs-prebuilt": "^2.1.14",
     "pug-html-loader": "^1.1.5",
