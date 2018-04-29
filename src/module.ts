@@ -10,6 +10,7 @@ const tinycolor = require('tinycolor2');
 const ngModuleName = 'angular-formly-templates-veleta'
 
 import {colorPickerConfig} from './color-picker/color-picker.config';
+import {colorSelectorConfig} from './color-selector/color-selector.config';
 //import ageInputsDirective from './age-inputs/age-inputs.directive';
 
 import './index.scss';
@@ -21,5 +22,6 @@ export default angular.module(ngModuleName, [
   'color.picker'
 ])
 .config(colorPickerConfig)
+.config(colorSelectorConfig)
 //.directive('ageInputs', ageInputsDirective)
 .name;

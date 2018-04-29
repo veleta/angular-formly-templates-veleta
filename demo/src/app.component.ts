@@ -10,6 +10,13 @@ export class MainController {
           label: 'Qual cor principal?',
         }
       },
+      {
+        key: 'secondary-color',
+        type: 'color-selector',
+        templateOptions: {
+          label: 'Qual cor Secundária?',
+        }
+      },
 
     ];
 
